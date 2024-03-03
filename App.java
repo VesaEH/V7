@@ -19,7 +19,7 @@ public class App {
 
         System.out.println("Tervetuloa Gifu-järjestelmään");
 
-        System.out.println("Mille yliopistolle haluat järjestelmän käyttöön?");
+        System.out.println("Mille yliopistolle haluat ottaa järjestelmän käyttöön?");
         String Uname = sc.nextLine();
         String Uid = "";
         int UmaxNumberOfStudents = 0;
@@ -40,7 +40,7 @@ public class App {
                         String name = sc.nextLine();
                         System.out.println("Anna kurssin ID:");
                         String id = sc.nextLine();
-                        System.out.println("Anna kurssin maksimi opiskelijamääräs:");
+                        System.out.println("Anna kurssin maksimi opiskelijamäärä:");
                         int maxNumberOfStudents = Integer.parseInt(sc.nextLine());
                         newCourse = new Course(name, id, maxNumberOfStudents);
                         courses.add(newCourse);
@@ -63,9 +63,16 @@ public class App {
                         break;
                     case 3:
                         //System.out.println("Listaa kurssit ");
+                        //listaa opiskelijat joista valitaab
+                        int j = 0;
+                    
                         for (Course course: courses) {
-                            course.printList();
+                            System.out.println(j++ + ") " + course.getInformation());
                         }
+                        
+                        //for (Course course: courses) {
+                        //    course.printList();
+                        //}
                         
                         /* 
                         System.out.println("Aja autoa");
@@ -82,10 +89,18 @@ public class App {
                         }*/
                         break;
                     case 4:
-                        //System.out.println("Listaa opiskelijat ");
+                        
+                        //listaa opiskelijat joista valitaab
+                        int k = 0;
+                    
                         for (Student student: students) {
-                            student.printList();
-                        }
+                            System.out.println(k++ + ") " + student.getInformation());
+                        }                    
+                    
+                        //System.out.println("Listaa opiskelijat ");
+                        //for (Student student: students) {
+                        //    student.printList();
+                        //}
                         break;
                     case 5:
                         System.out.println("Seilaa laivoja");

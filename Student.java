@@ -10,4 +10,9 @@ public class Student extends Gifu {
     public void printList() {
         System.out.println(id + " " + name);
     }
+
+    public String getInformation() {
+        return(id + " " + name);
+    }        
+
 }
