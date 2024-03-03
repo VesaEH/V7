@@ -12,10 +12,12 @@ public class App {
         Gifu newGifu = null;
         Student newStudent = null;
         Course newCourse = null;
+        Enrollment newEnrollment = null;
 
         Scanner sc = new Scanner(System.in);
         ArrayList<Student> students  = new ArrayList<>();
         ArrayList<Course> courses  = new ArrayList<>();
+        ArrayList<Enrollment> enrollments = new ArrayList<>();
 
         System.out.println("Tervetuloa Gifu-järjestelmään");
 
@@ -55,15 +57,9 @@ public class App {
                         newStudent = new Student(name2, id2, 0);
                         students.add(newStudent);
 
-
-                        //System.out.println("Listaa kulkuneuvot ");
-                        //for (Vehicle vehicle: vehicles) {
-                        //    vehicle.printSpecs();
-                        //}
                         break;
                     case 3:
-                        //System.out.println("Listaa kurssit ");
-                        //listaa opiskelijat joista valitaab
+                        //listaa kurssit ja indeksin
                         int j = 0;
                     
                         for (Course course: courses) {
@@ -73,24 +69,10 @@ public class App {
                         //for (Course course: courses) {
                         //    course.printList();
                         //}
-                        
-                        /* 
-                        System.out.println("Aja autoa");
-                        
-                        for (Vehicle vehicle: vehicles) {
-                            if (newVehicle instanceof Car){
-                                vehicle.drive();
-                            } else {
-                                System.out.println("Ei ollu auto");
-                            }                                                    
-                        }*/
-                        /*if (newVehicle instanceof Car) {
-                            newVehicle.drive();
-                        }*/
                         break;
                     case 4:
                         
-                        //listaa opiskelijat joista valitaab
+                        //listaa opiskelijat indeksillä
                         int k = 0;
                     
                         for (Student student: students) {
@@ -102,8 +84,25 @@ public class App {
                         //    student.printList();
                         //}
                         break;
-                    case 5:
-                        System.out.println("Seilaa laivoja");
+                    case 5:                        
+                        int j2 = 0;                   
+                        for (Course course: courses) {
+                            System.out.println(j2++ + ") " + course.getInformation());
+                        }
+                        System.out.println("Mille kurssille haluat lisätä opiskelijan? Syötä kurssin numero:");
+                        int courseParameter = Integer.parseInt(sc.nextLine());                        
+                        
+                        int k2 = 0;
+                        for (Student student: students) {
+                            System.out.println(k2++ + ") " + student.getInformation());
+                        } 
+                        System.out.println("Minkä opiskelijan haluat lisätä kurssille? Syötä opiskelijan numero:");
+                        int studentParameter = Integer.parseInt(sc.nextLine());
+                        //int grade = -1;
+                        //course.enrollStudent(course(x), student(y));
+                        newEnrollment = new Enrollment(-1, studentParameter, courseParameter);
+                        enrollments.add(newEnrollment);
+
                         break;
                     case 6:
                         System.out.println("Seilaa laivoja");

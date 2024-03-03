@@ -8,6 +8,7 @@ public class Gifu {
     protected int maxNumberOfStudents;
     protected ArrayList<Student> students = new ArrayList<>();
     protected ArrayList<Course> courses = new ArrayList<>();
+    protected ArrayList<Course> enrollments = new ArrayList<>();
     
     public Gifu(String name, String id, int maxNumberOfStudents){
         this.name = name;
@@ -15,8 +16,15 @@ public class Gifu {
         this.maxNumberOfStudents = maxNumberOfStudents;
     }
 
+    public String getInformation() {
+        return(id + " " + name);
+    }
 
-    //Tällä tulostuu 
+    /*public Course enrollStudent(Student, Course){
+        return (Course);
+    }*/
+
+    //Tällä tulostuu//Ei tarvita välttämättä 
     public void list() {
         //Lista = Muuttuja;
         //tähän määritellä lista, esim kurssin kaikki opiskelijat
