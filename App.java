@@ -49,7 +49,7 @@ public class App {
                     case 2:
                         System.out.println("Anna opiskelijan nimi:");
                         String name2 = sc.nextLine();
-                        System.out.println("Anna opiskelija opiskelijanumero:");
+                        System.out.println("Anna opiskelijan opiskelijanumero:");
                         String id2 = sc.nextLine();
 
                         newStudent = new Student(name2, id2, 0);
